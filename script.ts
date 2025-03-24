@@ -149,14 +149,14 @@ function generateNames() {
         domain = domain.replace(/\{noun\}/g, () => noun.toLowerCase());
         domain = domain.replace(/\{verb\}/g, () => verb.toLowerCase());
         domain = domain.replace(/\{tld\}/g, () => tld.toLowerCase());
-        domain = domain.replace('inging', 'ing'); // in english this is from duplicate "ing"
-        domain = domain.replace(' ', ''); // no spaces allowed
+        domain = domain.replace(/(inging)/g, 'ing'); // in english this is from duplicate "ing"
+        domain = domain.replace(/ /g, ""); // no spaces allowed
 
         title = title.replace(/\{adjective\}/g, () => capitalize(adj));
         title = title.replace(/\{noun\}/g, () => capitalize(noun));
         title = title.replace(/\{verb\}/g, () => capitalize(verb));
         title = title.replace(/\{tld\}/g, () => capitalize(tld));
-        title = title.replace('inging', 'ing'); // in english this is from duplicate "ing"
+        title = title.replace(/(inging)/g, 'ing'); // in english this is from duplicate "ing"
 
         results.push({ title, domain });
     }
@@ -174,7 +174,7 @@ function displayResults(results: any[]) {
         const divDomain = document.createElement('i');
         const divURL = document.createElement('a');
         divTitle.textContent = result.title;
-        divDomain.textContent = '@' + result.domain.replace('-', ''); // no dash allowed in handle
+        divDomain.textContent = '@' + result.domain.replace(/-/g, ''); // no dash allowed in handle
         divURL.textContent = 'https://' + result.domain;
         divURL.href = '#';
         divURL.onclick = () => { return false; }
