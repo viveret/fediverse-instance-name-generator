@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fediverse Instance Name Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fediverse Instance Name Generator</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="title-template">Title / Display Name Template:</label>
+                <input type="text" id="title-template" value="{verb} the {adjective} {noun} {tld}">
+                <small>Use {adjective}, {noun}, {verb}, {tld} as placeholders.</small>
+            </div>
+
+            <div class="control-group">
+                <label for="domain-template">Domain / Instance Handle Template:</label>
+                <input type="text" id="domain-template" value="{verb}the{adjective}{noun}.{tld}">
+                <small>Use {adjective}, {noun}, {verb}, {tld} as placeholders. This will become part of the URL of your instance.</small>
+            </div>
+
+            <div class="control-group">
+                <label for="template-select">Preset Templates:</label>
+                <select id="template-select">
+                    <option value="">Select a template...</option>
+                    <!-- Options will be loaded dynamically -->
+                </select>
+            </div>
+            
+            <div class="word-lists">
+                <div class="word-list">
+                    <h3 id="adjectives-list-title">Adjectives</h3>
+                    <textarea id="adjectives" rows="10"></textarea>
+                    <input type="file" id="upload-adjectives" accept=".txt">
+                </div>
+
+                <div class="word-list">
+                    <h3 id="nouns-list-title">Nouns</h3>
+                    <textarea id="nouns" rows="10"></textarea>
+                    <input type="file" id="upload-nouns" accept=".txt">
+                </div>
+
+                <div class="word-list">
+                    <h3 id="verbs-list-title">Verbs</h3>
+                    <textarea id="verbs" rows="10"></textarea>
+                    <input type="file" id="upload-verbs" accept=".txt">
+                </div>
+
+                <div class="word-list">
+                    <h3 id="tlds-list-title">Top Level Domains (TLDs)</h3>
+                    <textarea id="tlds" rows="10"></textarea>
+                    <input type="file" id="upload-tlds" accept=".txt">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="count">Number of names:</label>
+                <input type="number" id="count" min="1" max="200" value="15">
+            </div>
+
+            <button id="generate">Generate Names</button>
+            <button id="save-words">Save Word Lists</button>
+        </div>
+
+        <div class="results">
+            <h2>Generated Names</h2>
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
