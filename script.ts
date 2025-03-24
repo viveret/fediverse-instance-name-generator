@@ -3,6 +3,7 @@ let adjectives: string[] = [];
 let nouns: string[] = [];
 let verbs: string[] = [];
 let tlds: string[] = [];
+let templates: string[] = [];
 
 // DOM elements
 const templateInputTitle = document.getElementById('title-template') as HTMLInputElement;
@@ -24,6 +25,7 @@ const nounsListTitle = document.getElementById('nouns-list-title') as HTMLHeadin
 const verbsListTitle = document.getElementById('verbs-list-title') as HTMLHeadingElement;
 const tldsListTitle = document.getElementById('tlds-list-title') as HTMLHeadingElement;
 const templateSelect = document.getElementById('template-select') as HTMLSelectElement;
+const randomTemplateCheckbox = document.getElementById('random-template') as HTMLInputElement;
 
 const adjectivesTitleTextOriginal = adjectivesListTitle.textContent;
 const nounsTitleTextOriginal = nounsListTitle.textContent;
@@ -37,6 +39,7 @@ async function init() {
     nouns = await loadWordList('words/nouns.txt');
     verbs = await loadWordList('words/verbs.txt');
     tlds = await loadWordList('words/tlds.txt');
+    templates = await loadWordList('words/templates.csv');
 
     // Populate textareas
     adjectivesTextarea.value = adjectives.join('\n');
@@ -51,7 +54,6 @@ async function init() {
     tldsListTitle.textContent = tldsTitleTextOriginal + ' (' + tlds.length + ')';
 
     // Load templates
-    const templates = await loadWordList('words/templates.csv');
     populateTemplateDropdown(templates);
 
     // Set up event listeners
@@ -122,6 +124,18 @@ function generateNames() {
     for (let i = 0; i < count; i++) {
         let domain = templateDomain;
         let title = templateTitle;
+
+        // Use random template if checkbox is checked
+        if (randomTemplateCheckbox.checked && templates.length > 0) {
+            let template = templates[Math.floor(Math.random() * templates.length)];
+            let splitComma = template.indexOf(',');
+            if (splitComma > 0) {
+                let domainTemplateString = template.substring(0, splitComma).trim();
+                let titleTemplateString = template.substring(splitComma + 1).trim();
+                title = titleTemplateString;
+                domain = domainTemplateString;
+            }
+        }
 
         let adj = getRandomWord(adjectives);
         let noun = getRandomWord(nouns);
