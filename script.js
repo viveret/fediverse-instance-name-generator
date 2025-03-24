@@ -8,12 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+;
 // Word lists with default values
-let adjectives = [];
-let nouns = [];
-let verbs = [];
-let tlds = [];
-let templates = [];
+let wordBanks = {
+    adjectives: [],
+    nouns: [],
+    verbs: [],
+    tlds: [],
+    templates: [],
+};
 // DOM elements
 const templateInputTitle = document.getElementById('title-template');
 const templateInputDomain = document.getElementById('domain-template');
@@ -43,23 +46,23 @@ const tldsTitleTextOriginal = tldsListTitle.textContent;
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
         // Load default word lists
-        adjectives = yield loadWordList('words/adjectives.txt');
-        nouns = yield loadWordList('words/nouns.txt');
-        verbs = yield loadWordList('words/verbs.txt');
-        tlds = yield loadWordList('words/tlds.txt');
-        templates = yield loadWordList('words/templates.csv');
+        wordBanks.adjectives = yield loadWordList('words/adjectives.txt');
+        wordBanks.nouns = yield loadWordList('words/nouns.txt');
+        wordBanks.verbs = yield loadWordList('words/verbs.txt');
+        wordBanks.tlds = yield loadWordList('words/tlds.txt');
+        wordBanks.templates = yield loadWordList('words/templates.csv');
         // Populate textareas
-        adjectivesTextarea.value = adjectives.join('\n');
-        nounsTextarea.value = nouns.join('\n');
-        verbsTextarea.value = verbs.join('\n');
-        tldsTextarea.value = tlds.join('\n');
+        adjectivesTextarea.value = wordBanks.adjectives.join('\n');
+        nounsTextarea.value = wordBanks.nouns.join('\n');
+        verbsTextarea.value = wordBanks.verbs.join('\n');
+        tldsTextarea.value = wordBanks.tlds.join('\n');
         // Update titles
-        adjectivesListTitle.textContent = adjectivesTitleTextOriginal + ' (' + adjectives.length + ')';
-        nounsListTitle.textContent = nounsTitleTextOriginal + ' (' + nouns.length + ')';
-        verbsListTitle.textContent = verbsTitleTextOriginal + ' (' + verbs.length + ')';
-        tldsListTitle.textContent = tldsTitleTextOriginal + ' (' + tlds.length + ')';
+        adjectivesListTitle.textContent = adjectivesTitleTextOriginal + ' (' + wordBanks.adjectives.length + ')';
+        nounsListTitle.textContent = nounsTitleTextOriginal + ' (' + wordBanks.nouns.length + ')';
+        verbsListTitle.textContent = verbsTitleTextOriginal + ' (' + wordBanks.verbs.length + ')';
+        tldsListTitle.textContent = tldsTitleTextOriginal + ' (' + wordBanks.tlds.length + ')';
         // Load templates
-        populateTemplateDropdown(templates);
+        populateTemplateDropdown(wordBanks.templates);
         // Set up event listeners
         generateButton.addEventListener('click', generateNames);
         saveWordsButton.addEventListener('click', saveWordLists);
@@ -108,14 +111,14 @@ function loadWordList(path) {
         }
     });
 }
-function capitalize(s) {
-    if (s.length == 0)
+function capitalize() {
+    if (this.length == 0)
         return '';
-    else if (s.length == 1)
-        return s.toUpperCase();
+    else if (this.length == 1)
+        return this.toUpperCase();
     else {
-        let c = s[0].toUpperCase();
-        return c + s.substring(1);
+        let c = this[0].toUpperCase();
+        return c + this.substring(1);
     }
 }
 // Generate random names
@@ -128,8 +131,8 @@ function generateNames() {
         let domain = templateDomain;
         let title = templateTitle;
         // Use random template if checkbox is checked
-        if (randomTemplateCheckbox.checked && templates.length > 0) {
-            let template = templates[Math.floor(Math.random() * templates.length)];
+        if (randomTemplateCheckbox.checked && wordBanks.templates.length > 0) {
+            let template = wordBanks.templates[Math.floor(Math.random() * wordBanks.templates.length)];
             let splitComma = template.indexOf(',');
             if (splitComma > 0) {
                 let domainTemplateString = template.substring(0, splitComma).trim();
@@ -138,22 +141,92 @@ function generateNames() {
                 domain = domainTemplateString;
             }
         }
-        let adj = getRandomWord(adjectives);
-        let noun = getRandomWord(nouns);
-        let verb = getRandomWord(verbs);
-        let tld = getRandomWord(tlds);
+        const usedWords = {
+            noun: { indexed: {}, nonindexed: [] },
+            adjective: { indexed: {}, nonindexed: [] },
+            verb: { indexed: {}, nonindexed: [] },
+            tld: { indexed: {}, nonindexed: [] }
+        };
+        // let adj = getRandomWord(adjectives);
+        // let noun = getRandomWord(nouns);
+        // let verb = getRandomWord(verbs);
+        // let tld = getRandomWord(tlds);
         // Replace placeholders with selected words
-        domain = domain.replace(/\{adjective\}/g, () => adj.toLowerCase());
-        domain = domain.replace(/\{noun\}/g, () => noun.toLowerCase());
-        domain = domain.replace(/\{verb\}/g, () => verb.toLowerCase());
-        domain = domain.replace(/\{tld\}/g, () => tld.toLowerCase());
+        domain = generateNameFromTemplate(domain, String.prototype.toLowerCase);
+        // domain = domain.replace(/\{adjective\}/g, () => adj.toLowerCase());
+        // domain = domain.replace(/\{noun\}/g, () => noun.toLowerCase());
+        // domain = domain.replace(/\{verb\}/g, () => verb.toLowerCase());
+        // domain = domain.replace(/\{tld\}/g, () => tld.toLowerCase());
         domain = domain.replace(/(inging)/g, 'ing'); // in english this is from duplicate "ing"
         domain = domain.replace(/ /g, ""); // no spaces allowed
-        title = title.replace(/\{adjective\}/g, () => capitalize(adj));
-        title = title.replace(/\{noun\}/g, () => capitalize(noun));
-        title = title.replace(/\{verb\}/g, () => capitalize(verb));
-        title = title.replace(/\{tld\}/g, () => capitalize(tld));
+        title = generateNameFromTemplate(title, capitalize);
+        // title = title.replace(/\{adjective\}/g, () => capitalize(adj));
+        // title = title.replace(/\{noun\}/g, () => capitalize(noun));
+        // title = title.replace(/\{verb\}/g, () => capitalize(verb));
+        // title = title.replace(/\{tld\}/g, () => capitalize(tld));
         title = title.replace(/(inging)/g, 'ing'); // in english this is from duplicate "ing"
+        function generateNameFromTemplate(template, modStrFn) {
+            let wordtypeNonIndexedPosition = {
+                verb: 0,
+                noun: 0,
+                adjective: 0,
+                tld: 0,
+            };
+            return template.replace(/\{([a-z]+)\.?(\d+)?\}/g, (match, wordType, index) => {
+                const bank = wordBanks[`${wordType}s`]; // Convert to plural
+                if (!bank || bank.length === 0) {
+                    console.log(`${wordType} bank is null or empty`);
+                    return match;
+                }
+                let usedWordIndexStr = match.substring(1, match.length - 1).split('.')[1];
+                if (usedWordIndexStr) {
+                    let word = usedWords[wordType].indexed[usedWordIndexStr];
+                    if (word) {
+                        if (modStrFn) {
+                            return modStrFn.call(word);
+                        }
+                        else {
+                            return word;
+                        }
+                    }
+                    else {
+                        let word = getRandomWord(bank);
+                        usedWords[wordType].indexed[usedWordIndexStr] = word;
+                        if (modStrFn) {
+                            return modStrFn.call(word);
+                        }
+                        else {
+                            return word;
+                        }
+                    }
+                }
+                if (wordtypeNonIndexedPosition[wordType] < usedWords[wordType].nonindexed.length) {
+                    let word = usedWords[wordType].nonindexed[wordtypeNonIndexedPosition[wordType]];
+                    if (modStrFn) {
+                        return modStrFn.call(word);
+                    }
+                    else {
+                        return word;
+                    }
+                }
+                else {
+                    // Filter out already used words
+                    // Get random word (remove used words if you want uniqueness)
+                    let word = getRandomWord(bank);
+                    usedWords[wordType].nonindexed[wordtypeNonIndexedPosition[wordType]] = word;
+                    wordtypeNonIndexedPosition[wordType]++;
+                    if (modStrFn) {
+                        return modStrFn.call(word);
+                    }
+                    else {
+                        return word;
+                    }
+                }
+            }) /*.replace(/\{tld\}/g, () => {
+              return getRandomWord(wordBanks.tlds);
+              // return wordBanks.tlds[Math.floor(Math.random() * wordBanks.tlds.length)];
+            })*/;
+        }
         results.push({ title, domain });
     }
     displayResults(results);
@@ -205,16 +278,16 @@ function getRandomWord(list) {
 }
 // Update word lists from textareas
 function updateAdjectives() {
-    adjectives = adjectivesTextarea.value.split('\n').filter(word => word.trim() !== '');
+    wordBanks.adjectives = adjectivesTextarea.value.split('\n').filter(word => word.trim() !== '');
 }
 function updateNouns() {
-    nouns = nounsTextarea.value.split('\n').filter(word => word.trim() !== '');
+    wordBanks.nouns = nounsTextarea.value.split('\n').filter(word => word.trim() !== '');
 }
 function updateVerbs() {
-    verbs = verbsTextarea.value.split('\n').filter(word => word.trim() !== '');
+    wordBanks.verbs = verbsTextarea.value.split('\n').filter(word => word.trim() !== '');
 }
 function updateTlds() {
-    tlds = tldsTextarea.value.split('\n').filter(word => word.trim() !== '');
+    wordBanks.tlds = tldsTextarea.value.split('\n').filter(word => word.trim() !== '');
 }
 // Handle file uploads
 function handleFileUpload(type, event) {
@@ -230,19 +303,19 @@ function handleFileUpload(type, event) {
         const words = content.split('\n').filter(word => word.trim() !== '');
         switch (type) {
             case 'adjectives':
-                adjectives = words;
+                wordBanks.adjectives = words;
                 adjectivesTextarea.value = words.join('\n');
                 break;
             case 'nouns':
-                nouns = words;
+                wordBanks.nouns = words;
                 nounsTextarea.value = words.join('\n');
                 break;
             case 'verbs':
-                verbs = words;
+                wordBanks.verbs = words;
                 verbsTextarea.value = words.join('\n');
                 break;
             case 'tlds':
-                tlds = words;
+                wordBanks.tlds = words;
                 tldsTextarea.value = words.join('\n');
                 break;
         }
@@ -253,10 +326,10 @@ function handleFileUpload(type, event) {
 }
 // Save word lists to files
 function saveWordLists() {
-    saveToFile('adjectives.txt', adjectives.join('\n'));
-    saveToFile('nouns.txt', nouns.join('\n'));
-    saveToFile('verbs.txt', verbs.join('\n'));
-    saveToFile('tlds.txt', verbs.join('\n'));
+    saveToFile('adjectives.txt', wordBanks.adjectives.join('\n'));
+    saveToFile('nouns.txt', wordBanks.nouns.join('\n'));
+    saveToFile('verbs.txt', wordBanks.verbs.join('\n'));
+    saveToFile('tlds.txt', wordBanks.verbs.join('\n'));
 }
 function saveToFile(filename, content) {
     const blob = new Blob([content], { type: 'text/plain' });

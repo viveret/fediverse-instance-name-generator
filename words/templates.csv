@@ -1,6 +1,7 @@
 {verb}the{adjective}{noun}.{tld}, {verb} the {adjective} {noun} {tld}
 {adjective}{noun}hub.{tld}, {adjective} {noun} hub {tld}
 {verb}{noun}.{tld}, {verb} {noun} {tld}
+{verb.1}and{verb.2}the{noun}.{tld}, {verb.1} and {verb.2} the {noun} {tld}
 the{adjective}{noun}.{tld}, the {adjective} {noun} {tld}
 {noun}verse.{tld}, {noun}verse {tld}
 {verb}{adjective}.{tld}, {verb} {adjective} {tld}
@@ -14,3 +15,5 @@ the{adjective}{noun}.{tld}, the {adjective} {noun} {tld}
 {verb}{noun}city.{tld}, {verb} {noun} city {tld}
 {adjective}{noun}cityof{verb}ers.{tld}, {adjective} {noun} city of {verb}ers {tld}
 {adjective}ly{noun}.{tld}, {adjective}ly {noun} {tld}
+{noun.1}and{noun.2}.{tld}, {noun.1} and {noun.2} {tld}
+{adjective.1}and{adjective.2}{noun}.{tld}, {adjective.1} and {adjective.2} {noun} {tld}

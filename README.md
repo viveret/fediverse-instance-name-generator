@@ -14,7 +14,7 @@ A tool to randomly generate Fediverse instance names based on templates and word
 
 https://viveret.github.io/fediverse-instance-name-generator
 
-1. Enter a template using `{adjective}`, `{noun}`, `{verb}`, and `{tld}` placeholders
+1. Enter a template using `{adjective}`, `{noun}`, `{verb}`, and `{tld}` placeholders. Can use `.(\d+)` for multiple indexed parts.
 2. Modify the word lists as needed or upload your own
 3. Set the number of names to generate
 4. Click "Generate Names"
