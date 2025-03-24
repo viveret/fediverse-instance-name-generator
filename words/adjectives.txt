@@ -41,6 +41,7 @@ butterscotch
 byzantium
 caffeinated
 camel
+canine
 caramel
 cardinal
 carmine
@@ -82,6 +83,7 @@ end2end
 estrogenated
 fault tolerant
 fawn
+feline
 feminine
 feral
 fern
@@ -96,9 +98,11 @@ forest
 friendly
 fuzzy
 galvanized
+gamer
 garnet
 gay
 genderless
+giant
 giggly  
 ginger
 glitchy
@@ -141,6 +145,7 @@ lemon
 lesbian
 lilac
 lime
+lizard
 lollygagging  
 magenta
 mahogany
@@ -152,6 +157,7 @@ masculine
 mauve
 mercury
 metallic
+micro
 miffed  
 mint
 mlemmy
@@ -204,6 +210,7 @@ radiant
 rambunctious  
 raspberry
 red
+reptile
 rose
 rose Gold
 rotated
@@ -226,6 +233,7 @@ seafoam
 sepia
 shadow
 shamrock
+short
 silly
 silver
 sky
@@ -240,11 +248,13 @@ squiffy
 squishy
 stateful
 steel Blue
+sticky
 stone
 sunflower
 sunny
 sus
 sweet
+tall
 tan
 tangerine
 taupe

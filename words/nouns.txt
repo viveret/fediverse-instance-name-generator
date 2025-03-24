@@ -1,69 +1,108 @@
-
 aardvark
+abyssinian cat
 ado
+affenpinscher dog
+afghan hound
 air conditioner
+airedale terrier
+akita dog
+alaskan malamute dog
 alpaca
+american bobtail cat
+american bulldog
+american curl cat
+american eskimo dog
+american foxhound
+american shorthair cat
 ant
 anteater
 armadillo
+australian cattle dog
+australian shepherd
 baboon
 backpack
 badger
 bag
 baka
 balderdash
+balinese cat
 ballyhoo
 baloney
+basenji dog
+basset hound
 bat
 batteries
 battery
+beagle
 bean  
 bear
+bearded collie
 beaver
 bed
+bedlington terrier
 bee
 beetle
 belt
+bengal cat
+bernese mountain dog
+bichon frise dog
 bicycle
 binky  
 bird
+birman cat
 blahaj
 blanket
 blender
 blinds
+bloodhound
 blop
 blorb  
 blorp  
 blossom  
+bombay cat
 boogie  
 book
 bookmark
 boop
 boop  
+border collie
+border terrier
 bork  
+borzoi dog
+boston terrier
 bottle
 bowl
 box
+boxer dog
 breakcore
+british shorthair cat
+brittany dog
 broom
 brouhaha
+brussels griffon dog
 bub  
 bubblewrap
 bucket
 budgie
 buffoonery
+bull terrier
+bulldog
+bullmastiff dog
 bumble  
 bun  
 bunkum
+burmese cat
 butterfly
 button  
 byte
 cable
 cache
+cairn terrier
 calculator
 calendar
 canary
 candle
+cane corso dog
 car
 carpet
 cat
@@ -71,29 +110,40 @@ catboy
 catenby
 caterpillar
 catgirl
+cavalier king charles spaniel
 centipede
 chair
 chalk
 chalkboard
 chaos
 charger
+chartreux cat
 cheetah
+chesapeake bay retriever
 chicken
 chicken tender
+chihuahua dog
 chimpanzee
 chinchilla
+chinese crested dog
 chipmunk
 chonk
+chow chow dog
 clam
 claptrap
 clock
 cloud
+clumber spaniel
 cockatiel
+cocker spaniel
 code
 codswallop
+collie dog
 comb
 comic book
 compass
+corgi dog
+cornish rex cat
 cow
 crab
 cricket
@@ -101,18 +151,22 @@ cup
 cupcake  
 curtain
 cutting board
+dachshund
 daemon
 daisy  
+dalmatian
 deer
 demon
 desk
 detergent
+devon rex cat
 diary
 dictionary
 dinosaur
 dish soap
 dishwasher
 dither
+doberman pinscher dog
 dog
 dogboy
 dogenby
@@ -132,10 +186,15 @@ drill
 drivel
 duck
 dustpan
+egyptian mau cat
 elephant
 emu
 enby
 encyclopedia
+english cocker spaniel
+english setter dog
+english springer spaniel
+english toy spaniel
 envelope
 eraser
 extension cord
@@ -166,12 +225,16 @@ fork
 fox
 fracas
 freezer
+french bulldog
 frog
 fuss
+gamer
 garden
 gay
 gender
 gerbil
+german shepherd
+german shorthaired pointer
 ghost
 gibberish
 giraffe
@@ -184,10 +247,13 @@ gloves
 glue
 goat
 goblin
+golden retriever
 goose
 gorilla
 graphic novel
 grasshopper
+great dane
+greyhound
 grindset
 gubbins  
 guinea pig
@@ -198,6 +264,7 @@ hamster
 hanger
 hat
 hatman
+havanese dog
 headphones
 heater
 heckin
@@ -205,6 +272,7 @@ hedgehog
 hellhound
 high jinks
 highlighter
+himalayan cat
 hippo
 hodgepodge
 hoedown
@@ -222,13 +290,17 @@ hullaballoo
 hyena
 imbroglio
 index card
+irish setter dog
+irish wolfhound
 iron
 ironing board
 jabberwocky  
 jack
+jack russell terrier
 jacket
 jaguar
 jamboree  
+japanese bobtail cat
 jellybean  
 jellyfish
 journal
@@ -241,11 +313,14 @@ kitty
 knickknack
 knife
 koala
+korat cat
 kumquat
+labrador retriever
 ladder
 ladybug
 lambda
 lamp
+laperm cat
 lather
 laundry basket
 lavender
@@ -253,6 +328,7 @@ lemur
 leopard
 lesbian
 letter
+lhasa apso dog
 light bulb
 lighter
 linux
@@ -265,10 +341,14 @@ lovebird
 lumpkin  
 magazine
 mailbox
+maine coon cat
 malarkey
+maltese dog
 manatee
+manx cat
 marker
 marshmallow  
+mastiff dog
 meerkat
 melee
 meme
@@ -301,18 +381,22 @@ nail
 NaN
 neko
 neurospice
+newfoundland dog
 newspaper
 niblet  
 noodle  
+norwegian forest cat
 notebook
 novel
 nugget  
 nya
 object
+ocicat cat
 octopus
 office chair
 opossum
 orangutan
+oriental cat
 ostrich
 otter
 oven
@@ -327,12 +411,14 @@ paper clip
 parakeet
 parking meter
 parrot
+paws
 peach  
 pebble  
 peep  
 pen
 pencil
 penguin
+persian cat
 phone
 pickle  
 picture frame
@@ -350,8 +436,9 @@ plant
 plate
 platypus
 pliers
+pomeranian dog
 pony
-poppycock
+poodle dog
 porcupine
 porpoise
 possum
@@ -364,6 +451,7 @@ protractor
 puddle  
 puff  
 puffling  
+pug dog
 pupper
 puppy
 push pin
@@ -371,6 +459,8 @@ putty
 quibble  
 rabbit
 raccoon
+ragamuffin cat
+ragdoll cat
 rat
 razzle-dazzle
 razzmatazz
@@ -382,33 +472,47 @@ rhino
 river
 rizzler
 robot
+rottweiler dog
 rubber band
 ruckus
 rug
 ruler
+russian blue cat
+saint bernard dog
+samoyed dog
 saw
 scanner
 scarf
 schnoz  
 scissors
 scorpion
+scottish fold cat
 screw
 screwdriver
 sculpture
 seal
+selkirk rex cat
 senpai
 server
 shampoo
+shar pei dog
 shark
 sheep
 shenanigan
 shenanigans
 shenanigans  
+shiba inu dog
+shih tzu dog
 shindig
 shirt
 shoes
 shrimp
+siamese cat
+siberian cat
+siberian husky dog
 sigma
+silky terrier
+singapura cat
 sink
 skeleton
 skibidi
@@ -429,8 +533,10 @@ snuggie
 soap
 socks
 solid
+somali cat
 soup
 speaker
+sphynx cat
 spider
 sploot
 sponge
@@ -441,6 +547,7 @@ squeak
 squid
 squirrel
 squish  
+staffordshire bull terrier
 stamp
 stapler
 staples
@@ -473,6 +580,7 @@ to-do
 toaster
 tofu
 tomfoolery
+tonkinese cat
 toolbox
 toothbrush
 toothpaste
@@ -486,6 +594,8 @@ trash bag
 trash can
 tree
 turkey
+turkish angora cat
+turkish van cat
 turtle
 twaddle
 twinkle  
@@ -494,6 +604,7 @@ umbrella
 unicorn
 vacuum
 vase
+vizsla dog
 void
 waf
 wallaby
@@ -502,8 +613,11 @@ walrus
 warf
 wasp
 watch
+weimaraner dog
+west highland white terrier
 whale
 whatsit  
+whippet dog
 whisk  
 whiskers
 whiteboard
@@ -526,6 +640,7 @@ worm
 wrench
 wumpus  
 yip  
+yorkshire terrier
 zebra
 zonk  
 zooble  
