@@ -64,6 +64,7 @@ coffee
 copper
 coral
 cornflower
+corrupted
 cozy
 crimson
 cute
@@ -95,7 +96,9 @@ fluffy
 fluid
 flummoxed  
 forest
+fried
 friendly
+frozen
 fuzzy
 galvanized
 gamer
@@ -128,6 +131,7 @@ heliotrope
 hexadecimal
 honey
 indigo
+internet
 iridescent
 iris
 iron
@@ -148,6 +152,7 @@ lime
 lizard
 lollygagging  
 magenta
+magic
 mahogany
 maize
 malachite
@@ -244,6 +249,7 @@ snow
 solid
 sparkly
 spicy
+squeaky
 squiffy  
 squishy
 stateful
@@ -283,7 +289,6 @@ wet
 whippersnapper  
 white
 wind
-wine
 wisteria
 wobbly  
 wonky  

@@ -31,7 +31,6 @@ dreaming
 exist
 explode
 exploring
-face-licking
 faff  
 flapdoodle  
 flibber  
@@ -111,6 +110,8 @@ sudo
 tail-wagging
 touch grass
 transcend
+transform
+transformed
 twiddle  
 twinkle  
 uwuify

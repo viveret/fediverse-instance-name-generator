@@ -74,6 +74,7 @@ bottle
 bowl
 box
 boxer dog
+brain
 breakcore
 british shorthair cat
 brittany dog
@@ -90,6 +91,7 @@ bulldog
 bullmastiff dog
 bumble  
 bun  
+bunny
 bunkum
 burmese cat
 butterfly
@@ -142,6 +144,7 @@ collie dog
 comb
 comic book
 compass
+computer
 corgi dog
 cornish rex cat
 cow
@@ -227,6 +230,7 @@ fracas
 freezer
 french bulldog
 frog
+fruit
 fuss
 gamer
 garden
@@ -288,8 +292,10 @@ horse
 hubbub
 hullaballoo
 hyena
+icecream
 imbroglio
 index card
+internet
 irish setter dog
 irish wolfhound
 iron
@@ -309,6 +315,7 @@ kerfuffle
 kernel
 keyboard
 keys
+king
 kitty
 knickknack
 knife
@@ -321,6 +328,7 @@ ladybug
 lambda
 lamp
 laperm cat
+laptop
 lather
 laundry basket
 lavender
@@ -338,8 +346,9 @@ llama
 lobster
 lolly  
 lovebird
-lumpkin  
+lumpkin 
 magazine
+magician 
 mailbox
 maine coon cat
 malarkey
@@ -352,8 +361,10 @@ mastiff dog
 meerkat
 melee
 meme
+memer
 men
 meow
+meower
 mew
 microwave
 millipede
@@ -396,7 +407,6 @@ octopus
 office chair
 opossum
 orangutan
-oriental cat
 ostrich
 otter
 oven
@@ -446,6 +456,7 @@ post-it note
 pot
 pother
 printer
+programmer
 projector
 protractor
 puddle  
@@ -456,6 +467,7 @@ pupper
 puppy
 push pin
 putty
+queen
 quibble  
 rabbit
 raccoon
