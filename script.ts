@@ -134,6 +134,7 @@ function generateNames() {
         domain = domain.replace(/\{verb\}/g, () => verb.toLowerCase());
         domain = domain.replace(/\{tld\}/g, () => tld.toLowerCase());
         domain = domain.replace('inging', 'ing'); // in english this is from duplicate "ing"
+        domain = domain.replace(' ', ''); // no spaces allowed
 
         title = title.replace(/\{adjective\}/g, () => capitalize(adj));
         title = title.replace(/\{noun\}/g, () => capitalize(noun));
