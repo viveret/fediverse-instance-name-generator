@@ -16,6 +16,7 @@ chmod
 clamber  
 coding
 consume
+cuddle
 dancing
 dazzle  
 defy
@@ -28,6 +29,7 @@ doodle
 doomscrolling
 dreaming
 exist
+explode
 exploring
 face-licking
 faff  
@@ -53,8 +55,11 @@ hullaballoo
 jabber  
 jiggle  
 LARPing
+lick
+liquidate
 login
 lollygag  
+love
 meander  
 mizzle  
 mlem
@@ -73,6 +78,7 @@ pwn
 quibble  
 rawr
 reject
+rotate
 running
 scream
 scuttle  
@@ -86,8 +92,8 @@ smoosh
 smoosh  
 snack
 snicker  
-sniffing
 sniff
+sniffing
 snoofle  
 snooze  
 snuggle
@@ -121,6 +127,7 @@ yammer
 yank
 yeet
 yip  
+yoink
 yumble  
 zigzag
 zizzle  

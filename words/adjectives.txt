@@ -90,6 +90,7 @@ flibbertigibbet
 floofed
 floofy
 fluffy
+fluid
 flummoxed  
 forest
 friendly
@@ -170,8 +171,10 @@ oatmeal
 obsidian
 ocean
 ochre
+offline
 oil Slick
 olive
+online
 onyx
 orange
 orchid
@@ -203,6 +206,7 @@ raspberry
 red
 rose
 rose Gold
+rotated
 royal Blue
 royal Purple
 ruby
@@ -229,6 +233,7 @@ slate
 slime
 smoke
 snow
+solid
 sparkly
 spicy
 squiffy  
@@ -239,6 +244,7 @@ stone
 sunflower
 sunny
 sus
+sweet
 tan
 tangerine
 taupe

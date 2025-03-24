@@ -155,7 +155,8 @@ flashlight
 flibbertigibbet
 floof
 fluffernutter  
-fluffle  
+fluffle
+fluid  
 flummery
 flump  
 flutter
@@ -294,6 +295,7 @@ mrrrow
 muffin  
 mugshot
 mumbo jumbo
+mushroom
 nail
 NaN
 neko
@@ -407,6 +409,7 @@ shoes
 shrimp
 sigma
 sink
+skeleton
 skibidi
 skunk
 slinky
@@ -424,6 +427,7 @@ snug
 snuggie
 soap
 socks
+solid
 soup
 speaker
 spider
