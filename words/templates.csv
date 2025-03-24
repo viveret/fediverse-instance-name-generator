@@ -6,4 +6,11 @@ the{adjective}{noun}.{tld}, the {adjective} {noun} {tld}
 {verb}{adjective}.{tld}, {verb} {adjective} {tld}
 {adjective}{verb}ers.{tld}, {adjective} {verb}ers {tld}
 {noun}town.{tld}, {noun} town {tld}
+{adjective}{noun}town.{tld}, {adjective} {noun} town {tld}
+{verb}{noun}town.{tld}, {verb} {noun} town {tld}
+{adjective}{noun}townof{verb}ers.{tld}, {adjective} {noun} town of {verb}ers {tld}
+{noun}city.{tld}, {noun} city {tld}
+{adjective}{noun}city.{tld}, {adjective} {noun} city {tld}
+{verb}{noun}city.{tld}, {verb} {noun} city {tld}
+{adjective}{noun}cityof{verb}ers.{tld}, {adjective} {noun} city of {verb}ers {tld}
 {adjective}ly{noun}.{tld}, {adjective}ly {noun} {tld}

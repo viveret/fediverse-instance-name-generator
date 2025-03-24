@@ -116,6 +116,10 @@ button:hover {
     flex: auto;
 }
 
+#output div h3 {
+    margin: 0;
+}
+
 small {
     color: #666;
     font-size: 0.9em;

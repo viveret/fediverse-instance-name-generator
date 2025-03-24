@@ -83,6 +83,7 @@ function init() {
                 }
             }
         });
+        generateNames();
     });
 }
 function populateTemplateDropdown(templates) {
@@ -166,7 +167,7 @@ function displayResults(results) {
         const divDomain = document.createElement('i');
         const divURL = document.createElement('a');
         divTitle.textContent = result.title;
-        divDomain.textContent = '@' + result.domain;
+        divDomain.textContent = '@' + result.domain.replace('-', ''); // no dash allowed in handle
         divURL.textContent = 'https://' + result.domain;
         divURL.href = '#';
         divURL.onclick = () => { return false; };
