@@ -53,12 +53,7 @@
 
 #darkModeToggle:checked + .toggle-label .toggle-icon {
     transform: rotate(180deg);
-    content: "☀️";
-}
-
-/* Add this if you want the icon to change */
-#darkModeToggle:checked + .toggle-label .toggle-icon::before {
-    content: "☀️";
+    position: fixed;
 }
 
 

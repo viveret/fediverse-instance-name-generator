@@ -289,17 +289,6 @@ function displayResults(results) {
     });
 }
 function RGBcolor(alpha) {
-    // if (document.documentElement.getAttribute('data-theme') == 'dark') {
-    //     var r = Math.floor(Math.random() * 25);
-    //     var g = Math.floor(Math.random() * 25);
-    //     var b = Math.floor(Math.random() * 25);
-    //     return "rgb(" + r + "%," + g + "%," + b + "%)";  
-    // } else {
-    //     var r = Math.floor(Math.random() * 25 + 75);
-    //     var g = Math.floor(Math.random() * 25 + 75);
-    //     var b = Math.floor(Math.random() * 25 + 75);
-    //     return "rgb(" + r + "%," + g + "%," + b + "%)";  
-    // }
     var r = Math.floor(Math.random() * 25 + 75);
     var g = Math.floor(Math.random() * 25 + 75);
     var b = Math.floor(Math.random() * 25 + 75);
