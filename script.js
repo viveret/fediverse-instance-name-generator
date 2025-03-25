@@ -282,17 +282,21 @@ function displayResults(results) {
         div.appendChild(divDomain);
         div.appendChild(document.createElement('br'));
         div.appendChild(divURL);
-        div.style.backgroundColor = RGBcolor("50");
-        div.style.borderColor = RGBcolor("100");
+        let c = randomRGB();
+        div.style.backgroundColor = randomRGBAstring(c, "50");
+        div.style.borderColor = randomRGBAstring(c, "100");
         div.style.borderWidth = '2px';
         outputDiv.appendChild(div);
     });
 }
-function RGBcolor(alpha) {
+function randomRGB() {
     var r = Math.floor(Math.random() * 25 + 75);
     var g = Math.floor(Math.random() * 25 + 75);
     var b = Math.floor(Math.random() * 25 + 75);
-    return "rgba(" + r + "%," + g + "%," + b + "%, " + alpha + "%)";
+    return { r, g, b };
+}
+function randomRGBAstring(c, alpha) {
+    return "rgba(" + c.r + "%," + c.g + "%," + c.b + "%, " + alpha + "%)";
 }
 // Get a random word from a list
 function getRandomWord(list) {
