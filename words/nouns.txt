@@ -1,23 +1,12 @@
 aardvark
 abyssinian cat
 ado
-affenpinscher dog
-afghan hound
 air conditioner
-airedale terrier
 akita dog
-alaskan malamute dog
 alpaca
-american bobtail cat
-american bulldog
-american curl cat
-american eskimo dog
-american foxhound
-american shorthair cat
 ant
 anteater
 armadillo
-australian cattle dog
 australian shepherd
 baboon
 backpack
@@ -36,16 +25,12 @@ battery
 beagle
 bean  
 bear
-bearded collie
 beaver
 bed
-bedlington terrier
 bee
 beetle
 belt
 bengal cat
-bernese mountain dog
-bichon frise dog
 bicycle
 binky  
 bird
@@ -59,6 +44,7 @@ blop
 blorb  
 blorp  
 blossom  
+bobtail cat
 bombay cat
 boogie  
 book
@@ -76,11 +62,9 @@ box
 boxer dog
 brain
 breakcore
-british shorthair cat
 brittany dog
 broom
 brouhaha
-brussels griffon dog
 bub  
 bubblewrap
 bucket
@@ -91,8 +75,8 @@ bulldog
 bullmastiff dog
 bumble  
 bun  
-bunny
 bunkum
+bunny
 burmese cat
 butterfly
 button  
@@ -112,7 +96,7 @@ catboy
 catenby
 caterpillar
 catgirl
-cavalier king charles spaniel
+cattle dog
 centipede
 chair
 chalk
@@ -121,7 +105,6 @@ chaos
 charger
 chartreux cat
 cheetah
-chesapeake bay retriever
 chicken
 chicken tender
 chihuahua dog
@@ -169,7 +152,6 @@ dinosaur
 dish soap
 dishwasher
 dither
-doberman pinscher dog
 dog
 dogboy
 dogenby
@@ -194,10 +176,6 @@ elephant
 emu
 enby
 encyclopedia
-english cocker spaniel
-english setter dog
-english springer spaniel
-english toy spaniel
 envelope
 eraser
 extension cord
@@ -238,7 +216,6 @@ gay
 gender
 gerbil
 german shepherd
-german shorthaired pointer
 ghost
 gibberish
 giraffe
@@ -306,7 +283,6 @@ jack russell terrier
 jacket
 jaguar
 jamboree  
-japanese bobtail cat
 jellybean  
 jellyfish
 journal
@@ -396,7 +372,7 @@ newfoundland dog
 newspaper
 niblet  
 noodle  
-norwegian forest cat
+forest cat
 notebook
 novel
 nugget  
@@ -521,7 +497,7 @@ shoes
 shrimp
 siamese cat
 siberian cat
-siberian husky dog
+siberian husky
 sigma
 silky terrier
 singapura cat
@@ -559,7 +535,6 @@ squeak
 squid
 squirrel
 squish  
-staffordshire bull terrier
 stamp
 stapler
 staples
@@ -606,8 +581,6 @@ trash bag
 trash can
 tree
 turkey
-turkish angora cat
-turkish van cat
 turtle
 twaddle
 twinkle  
@@ -626,7 +599,6 @@ warf
 wasp
 watch
 weimaraner dog
-west highland white terrier
 whale
 whatsit  
 whippet dog
