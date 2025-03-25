@@ -285,7 +285,6 @@ function displayResults(results) {
         let c = randomRGB();
         div.style.backgroundColor = randomRGBAstring(c, "50");
         div.style.borderColor = randomRGBAstring(c, "75");
-        div.style.borderWidth = '2px';
         outputDiv.appendChild(div);
     });
 }
