@@ -1,4 +1,5 @@
 {adjective}{noun}.{tld}, {adjective} {noun} {tld}
+{noun.1}{noun.2}.{tld}, {noun.1} {noun.2} {tld}
 {verb}the{adjective}{noun}.{tld}, {verb} the {adjective} {noun} {tld}
 {adjective}{noun}hub.{tld}, {adjective} {noun} hub {tld}
 {verb}{noun}.{tld}, {verb} {noun} {tld}
