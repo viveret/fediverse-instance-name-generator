@@ -36,6 +36,7 @@ const verbsListTitle = document.getElementById('verbs-list-title') as HTMLHeadin
 const tldsListTitle = document.getElementById('tlds-list-title') as HTMLHeadingElement;
 const templateSelect = document.getElementById('template-select') as HTMLSelectElement;
 const randomTemplateCheckbox = document.getElementById('random-template') as HTMLInputElement;
+const darkModeToggle = document.getElementById('darkModeToggle') as HTMLInputElement;
 
 const adjectivesTitleTextOriginal = adjectivesListTitle.textContent;
 const nounsTitleTextOriginal = nounsListTitle.textContent;
@@ -44,6 +45,21 @@ const tldsTitleTextOriginal = tldsListTitle.textContent;
 
 // Initialize the app
 async function init() {
+    // Check for saved user preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkModeToggle.checked = true;
+    } else if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        darkModeToggle.checked = false;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Use system preference if no saved preference
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkModeToggle.checked = true;
+    }
+
+
     // Load default word lists
     wordBanks.adjectives = await loadWordList('words/adjectives.txt');
     wordBanks.nouns = await loadWordList('words/nouns.txt');
@@ -90,6 +106,25 @@ async function init() {
                 templateInputTitle.value = titleTemplateString;
                 templateInputDomain.value = domainTemplateString;
             }
+        }
+    });
+
+    // Toggle dark mode
+    darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Watch for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('theme')) { // Only if user hasn't set preference
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+            darkModeToggle.checked = e.matches;
         }
     });
 
@@ -267,16 +302,18 @@ function displayResults(results: any[]) {
         div.appendChild(divDomain);
         div.appendChild(document.createElement('br'));
         div.appendChild(divURL);
-        div.style.backgroundColor = RGBcolor();
+        div.style.backgroundColor = RGBcolor("50");
+        div.style.borderColor = RGBcolor("100");
+        div.style.borderWidth = '2px';
         outputDiv.appendChild(div);
     });
 }
 
-function RGBcolor() {
+function RGBcolor(alpha: string) {
     var r = Math.floor(Math.random() * 25 + 75);
     var g = Math.floor(Math.random() * 25 + 75);
     var b = Math.floor(Math.random() * 25 + 75);
-    return "rgb(" + r + "%," + g + "%," + b + "%)";  
+    return "rgba(" + r + "%," + g + "%," + b + "%, " + alpha + "%)";  
 }
 
 // Get a random word from a list

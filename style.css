@@ -1,34 +1,101 @@
+:root {
+    --white: white;
+    --black: black;
+    --light-grey: #ddd;
+    --grey: #666;
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --primary-color: #2563eb;
+    --toggle-bg: #f0f0f0;
+    --link-text: #0066fa;
+}
+
+[data-theme="dark"] {
+    --white: black;
+    --black: white;
+    --light-grey: var(--bg);
+    --grey: #aaa;
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --primary-color: #3b82f6;
+    --toggle-bg: #333333;
+    --link-text: #00faff;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--toggle-bg);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-icon {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+#darkModeToggle {
+    display: none;
+}
+
+#darkModeToggle:checked + .toggle-label .toggle-icon {
+    transform: rotate(180deg);
+    content: "☀️";
+}
+
+/* Add this if you want the icon to change */
+#darkModeToggle:checked + .toggle-label .toggle-icon::before {
+    content: "☀️";
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
-    background-color: white;
+    background-color: var(--white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2, h3, h4 {
-    color: black;
+    color: var(--black);
     white-space: nowrap;
 }
 
 .controls {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-color);
     border-radius: 5px;
 }
 
 .control-group {
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .control-group label {
@@ -51,23 +118,25 @@ h1, h2, h3, h4 {
 
 .control-group input[type="text"],
 .control-group input[type="number"] {
-    width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-grey);
     border-radius: 4px;
+    color: var(--text-color);
+    background-color: var(--white);
 }
 
 .control-group select {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-grey);
     border-radius: 4px;
     margin-bottom: 10px;
+    color: var(--text-color);
+    background-color: var(--white);
 }
 
 button {
     background-color: #3498db;
-    color: white;
+    color: var(--white);
     border: none;
     padding: 10px 15px;
     margin-right: 10px;
@@ -88,14 +157,17 @@ button:hover {
 
 .word-list {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .word-list textarea {
-    width: 100%;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-grey);
     border-radius: 4px;
     resize: vertical;
+    color: var(--text-color);
+    background-color: var(--white);
 }
 
 .results {
@@ -110,8 +182,10 @@ button:hover {
 
 #output div {
     padding: 10px;
-    background-color: #e8f4fc;
+    background-color: var(--light-grey);
     border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
     word-break: keep-all;
     flex: auto;
 }
@@ -121,11 +195,15 @@ button:hover {
 }
 
 small {
-    color: #666;
+    color: var(--grey);
     font-size: 0.9em;
 }
 
 input[type="file"] {
     margin-top: 5px;
     width: 100%;
+}
+
+a {
+    color: var(--link-text);
 }

@@ -38,6 +38,7 @@ const verbsListTitle = document.getElementById('verbs-list-title');
 const tldsListTitle = document.getElementById('tlds-list-title');
 const templateSelect = document.getElementById('template-select');
 const randomTemplateCheckbox = document.getElementById('random-template');
+const darkModeToggle = document.getElementById('darkModeToggle');
 const adjectivesTitleTextOriginal = adjectivesListTitle.textContent;
 const nounsTitleTextOriginal = nounsListTitle.textContent;
 const verbsTitleTextOriginal = verbsListTitle.textContent;
@@ -45,6 +46,21 @@ const tldsTitleTextOriginal = tldsListTitle.textContent;
 // Initialize the app
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
+        // Check for saved user preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+        else if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            darkModeToggle.checked = false;
+        }
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Use system preference if no saved preference
+            document.documentElement.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
         // Load default word lists
         wordBanks.adjectives = yield loadWordList('words/adjectives.txt');
         wordBanks.nouns = yield loadWordList('words/nouns.txt');
@@ -84,6 +100,24 @@ function init() {
                     templateInputTitle.value = titleTemplateString;
                     templateInputDomain.value = domainTemplateString;
                 }
+            }
+        });
+        // Toggle dark mode
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        // Watch for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) { // Only if user hasn't set preference
+                document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                darkModeToggle.checked = e.matches;
             }
         });
         generateNames();
@@ -248,15 +282,28 @@ function displayResults(results) {
         div.appendChild(divDomain);
         div.appendChild(document.createElement('br'));
         div.appendChild(divURL);
-        div.style.backgroundColor = RGBcolor();
+        div.style.backgroundColor = RGBcolor("50");
+        div.style.borderColor = RGBcolor("100");
+        div.style.borderWidth = '2px';
         outputDiv.appendChild(div);
     });
 }
-function RGBcolor() {
+function RGBcolor(alpha) {
+    // if (document.documentElement.getAttribute('data-theme') == 'dark') {
+    //     var r = Math.floor(Math.random() * 25);
+    //     var g = Math.floor(Math.random() * 25);
+    //     var b = Math.floor(Math.random() * 25);
+    //     return "rgb(" + r + "%," + g + "%," + b + "%)";  
+    // } else {
+    //     var r = Math.floor(Math.random() * 25 + 75);
+    //     var g = Math.floor(Math.random() * 25 + 75);
+    //     var b = Math.floor(Math.random() * 25 + 75);
+    //     return "rgb(" + r + "%," + g + "%," + b + "%)";  
+    // }
     var r = Math.floor(Math.random() * 25 + 75);
     var g = Math.floor(Math.random() * 25 + 75);
     var b = Math.floor(Math.random() * 25 + 75);
-    return "rgb(" + r + "%," + g + "%," + b + "%)";
+    return "rgba(" + r + "%," + g + "%," + b + "%, " + alpha + "%)";
 }
 // Get a random word from a list
 function getRandomWord(list) {
